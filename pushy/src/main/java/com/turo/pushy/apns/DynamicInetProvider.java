@@ -17,9 +17,10 @@ import org.xbill.DNS.TextParseException;
 import org.xbill.DNS.Type;
 
 /**
- * for creating new connections dynamicly to different gateways
- * 
+ * Creating new connections dynamicly to different gateways
+ * <p>
  * for DEMO
+ * <pre>
  * DynamicInetProvider provider = new DynamicInetProvider("api.push.apple.com", ApnsClientBuilder.DEFAULT_APNS_PORT);
  * provider.addDnsServer("114.114.114.114");
  * provider.addDnsServer("223.5.5.5");
@@ -30,9 +31,10 @@ import org.xbill.DNS.Type;
  * } catch (InterruptedException e1) {
  * }
  * int count = 8;
- * while(count -- > 0) {
+ * while(count -- &gt; 0) {
  *     System.out.println(provider.getInetAddress());
  * }
+ * </pre>
  * 
  * @author hblzxsj
  *
@@ -153,7 +155,7 @@ public class DynamicInetProvider implements ApnsInetProvider {
     
     /**
      * set the expire time in seconds of the ip records
-     * @param ttl
+     * @param ttl life time of the ip in pool
      */
     public void setTTL(int ttl) {
         this.ttl = ttl;
@@ -161,7 +163,7 @@ public class DynamicInetProvider implements ApnsInetProvider {
 
     /**
      * set the interval in seconds between trying to retrieve new ips from dns 
-     * @param fetchInterval
+     * @param fetchInterval Interval trying to fetch new ip list
      */
     public void setFetchInterval(int fetchInterval) {
         this.fetchInterval = fetchInterval;
